@@ -126,7 +126,10 @@
       width: 100%;
       max-width: 540px;
       margin: 0 auto;
-      padding: clamp(40px, 9vh, 88px) 16px 40px;
+      /* Ocupa al menos toda la pantalla para que el pie quede siempre dentro de la franja inferior */
+      min-height: 100vh;
+      min-height: 100dvh;
+      padding: clamp(40px, 9vh, 88px) 16px 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -365,11 +368,15 @@
       text-transform: uppercase;
     }
 
+    /* Pegado al fondo de la página: al llegar abajo queda sobre la franja verde,
+       lejos de la línea amarilla y con buen contraste */
     footer {
-      margin-top: 40px;
+      margin-top: auto;
+      padding: 56px 0 max(22px, env(safe-area-inset-bottom));
       font-size: 0.8rem;
-      letter-spacing: 0.04em;
-      color: rgba(255, 255, 255, 0.6);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.88);
     }
 
     /* Aviso flotante ("Enlace copiado") */
