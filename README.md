@@ -12,7 +12,7 @@ Dirección actual: https://organicbrownkid.github.io/sharp-interactive/
 2. Busca el botón y cambia solo lo que va dentro de `href="..."`.
 3. Pulsa *Commit changes*. La página se actualiza sola en 1 o 2 minutos.
 
-El formulario y el Instagram empiezan con `href="#pendiente"`. Mientras tengan ese valor, el botón se ve apagado y dice "Próximamente". Al poner la dirección real se activa solo.
+Si un botón lleva `href="#pendiente"`, se ve apagado y dice "Próximamente". Al poner la dirección real se activa solo.
 
 ## Cambiar el PDF
 
@@ -32,14 +32,14 @@ Hay dos caminos. Escoge uno.
 2. *uploading an existing file*: arrastra todo el contenido del ZIP descomprimido (no la carpeta, lo de adentro) y pulsa *Commit changes*.
 3. *Settings → Pages → Branch: `main`, carpeta `/ (root)` → Save*.
 
-Consejo: si el repositorio se llama exactamente `<cuenta>.github.io` (por ejemplo `sharp-interactive.github.io`), la página queda en `https://<cuenta>.github.io/`, sin subcarpeta. Es la dirección más corta para el QR.
+Consejo: si el repositorio se llama exactamente `<cuenta>.github.io` (por ejemplo `sharp-interactive.github.io`), la página queda en `https://<cuenta>.github.io/`, sin subcarpeta.
 
-### Antes de imprimir el QR
+### Ojo con el QR de los stickers
 
-GitHub Pages **no redirige** cuando un repositorio cambia de dueño: la dirección vieja deja de funcionar. Por eso:
+Los stickers apuntan a `https://organicbrownkid.github.io/sharp-interactive/`, y GitHub Pages **no redirige** cuando un repositorio cambia de dueño.
 
-- Imprime el QR solo cuando la dirección sea definitiva, **o**
-- Después de mover la página, crea en la cuenta vieja un repo con el mismo nombre (`sharp-interactive`), activa Pages y deja solo este `index.html`, cambiando `NUEVA-DIRECCION`:
+- **Camino B:** el QR sigue funcionando porque la página original no se mueve. Para no tener que editar las dos copias, convierte la original en una redirección con el código de abajo.
+- **Camino A:** la dirección vieja deja de funcionar al transferir. Justo después, crea en la cuenta vieja un repo con el mismo nombre (`sharp-interactive`), activa Pages y deja solo este `index.html`, cambiando `NUEVA-DIRECCION`:
 
 ```html
 <!doctype html>
